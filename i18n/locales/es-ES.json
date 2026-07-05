@@ -1,0 +1,8 @@
+{
+  "home": {
+    "eyebrow": "Proyecto inicial",
+    "description": "Estructura base con src/, páginas, componentes, composables y variables de entorno listas para usar con TypeScript.",
+    "apiBaseUrlLabel": "API base URL",
+    "apiBaseUrlEmpty": "No definida"
+  }
+}
