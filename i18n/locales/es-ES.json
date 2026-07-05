@@ -1,4 +1,24 @@
 {
+  "landing": {
+    "eyebrow": "Secciones",
+    "title": "CheapTrips",
+    "description": "Entra a una de las tres secciones para comprobar que el enrutado funciona.",
+    "linkHint": "Abrir sección",
+    "hotels": "Hoteles",
+    "flights": "Vuelos",
+    "fullTrip": "Viaje completo"
+  },
+  "sections": {
+    "hotels": {
+      "title": "Hoteles"
+    },
+    "flights": {
+      "title": "Vuelos"
+    },
+    "fullTrip": {
+      "title": "Viaje completo"
+    }
+  },
   "home": {
     "eyebrow": "Proyecto inicial",
     "description": "Estructura base con src/, páginas, componentes, composables y variables de entorno listas para usar con TypeScript.",
