@@ -1,21 +1,23 @@
 <template>
   <section class="hero-card">
-    <p class="eyebrow">Proyecto inicial</p>
+    <p class="eyebrow">{{ t('home.eyebrow') }}</p>
     <h1>{{ appName }}</h1>
     <p class="description">
-      Estructura base con <strong>src/</strong>, páginas, componentes, composables y variables de entorno listas para usar con TypeScript.
+      {{ t('home.description') }}
     </p>
 
     <dl class="env-list">
       <div>
-        <dt>API base URL</dt>
-        <dd>{{ apiBaseUrl || 'No definida' }}</dd>
+        <dt>{{ t('home.apiBaseUrlLabel') }}</dt>
+        <dd>{{ apiBaseUrl || t('home.apiBaseUrlEmpty') }}</dd>
       </div>
     </dl>
   </section>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 defineProps<{
   appName: string
   apiBaseUrl: string
