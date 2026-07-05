@@ -2,12 +2,18 @@ import { createError, defineEventHandler, getQuery } from 'h3'
 import { getFlightSearchProvider } from '../../services/flight-search'
 import type { FlightSearchQuery } from '../../types/flight-search'
 
-function toSingleString(value: string | string[] | undefined) {
-  return Array.isArray(value) ? value[0] : value
+function toSingleString(value: unknown) {
+  if (Array.isArray(value)) {
+    const firstValue = value[0]
+
+    return typeof firstValue === 'string' ? firstValue : undefined
+  }
+
+  return typeof value === 'string' ? value : undefined
 }
 
-function parsePositiveInteger(value: string | undefined, fallback: number) {
-  const parsedValue = Number.parseInt(value || '', 10)
+function parsePositiveInteger(value: unknown, fallback: number) {
+  const parsedValue = Number.parseInt(typeof value === 'string' ? value : '', 10)
 
   return Number.isFinite(parsedValue) && parsedValue > 0 ? parsedValue : fallback
 }
@@ -43,6 +49,5 @@ export default defineEventHandler(async (event) => {
 
   return {
     provider: 'amadeus',
-    data: flights
   }
 })

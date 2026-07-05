@@ -1,10 +1,10 @@
 import type { FlightSearchProvider } from '../types/flight-search'
-import { createAmadeusFlightSearchProvider } from '../providers/amadeus'
+import { createSkyscannerFlightSearchProvider } from '../providers/skyscanner'
 
 const providers: Record<string, FlightSearchProvider> = {
-  amadeus: createAmadeusFlightSearchProvider()
+  skyscanner: createSkyscannerFlightSearchProvider()
 }
 
-export function getFlightSearchProvider() {
-  return providers.amadeus
+export function getFlightSearchProvider(): FlightSearchProvider {
+  return providers.skyscanner
 }
