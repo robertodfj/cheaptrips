@@ -4,6 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n'],
   srcDir: 'src/',
+  runtimeConfig: {
+    amadeusClientId: process.env.AMADEUS_CLIENT_ID || '',
+    amadeusClientSecret: process.env.AMADEUS_CLIENT_SECRET || '',
+    amadeusApiBaseUrl: process.env.AMADEUS_API_BASE_URL || 'https://api.amadeus.com',
+    public: {
+      appName: process.env.NUXT_PUBLIC_APP_NAME || 'CheapTrips',
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || ''
+    }
+  },
   i18n: {
     defaultLocale: 'es-ES',
     langDir: 'locales/',
@@ -16,11 +25,5 @@ export default defineNuxtConfig({
         file: 'es-ES.json'
       }
     ]
-  },
-  runtimeConfig: {
-    public: {
-      appName: process.env.NUXT_PUBLIC_APP_NAME || 'CheapTrips',
-      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || ''
-    }
   }
 })
